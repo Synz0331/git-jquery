@@ -1,26 +1,23 @@
-block content
-    div.row
-        div.four.columns 
-          b Repo Name
-        div.two.columns 
-          b Owner
-        div.two.columns 
-          b State (Public/Private)
-        div.two.columns
-          b Forks
-        div.two.columns
-          b Open Issues
-
-    each item in items
-        div.row
-            div.four.columns 
-                a(href="#", onClick='repoView("' + item.full_name + '")')
-                    = item.name
-            div.two.columns= item.owner.login
-            div.two.columns
-                if (item.private)
-                    |Private
-                else
-                    |Public
-            div.two.columns= item.forks
-            div.two.columns= item.open_issues
+div.u-full-width
+  table.u-full-width
+    thead
+      tr
+        th Repo Name
+        th Owner
+        th Public or Private
+        th Forks
+        th Open Issues
+      tbody
+      each item in items
+        tr
+          td
+            a(href="#", onClick='repoView("' + item.full_name + '")')
+              = item.name
+          td= item.owner.login
+          td
+            if (item.private)
+              |Private
+            else
+              |Public
+          td= item.forks
+          td= item.open_issues
