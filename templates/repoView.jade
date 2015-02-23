@@ -33,7 +33,7 @@ div.row
         else if (item.owner.gravatar_id)
             img(width='300' src=item.owner.gravatar_id)
     div.eight.columns
-        strong = "Owner: "
+        strong= "Owner: "
             a(href=item.owner.html_url)
                 = item.owner.login
         br
@@ -48,11 +48,15 @@ br
 
 strong= "Created at: "
 = item.created_at
+br
 strong= "Updated at: "
 = item.updated_at
+br
 strong= "Pushed at: "
 = item.pushed_at
+br
 strong= "Clone URL: "
 = item.clone_url
+br
 strong= "SVN URL: "
 = item.svn_url

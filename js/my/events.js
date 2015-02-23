@@ -16,7 +16,7 @@ function myEvents(){
             $("#list").html(html)
 
             // load the first repo to view
-            repoView(repos[0].full_name)
+            //repoView(events[0].full_name)
 
         })
 
