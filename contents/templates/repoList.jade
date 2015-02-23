@@ -1,8 +1,26 @@
-each item in items
-    div.row 
-        div.six.columns
-            a(href="#", onClick='repoView("' + item.full_name + '")')
-                = item.full_name
-        div.six.columns
-            = item.open_issues
-            |  issues
+block content
+    div.row
+        div.four.columns 
+          b Repo Name
+        div.two.columns 
+          b Owner
+        div.two.columns 
+          b State (Public/Private)
+        div.two.columns
+          b Forks
+        div.two.columns
+          b Open Issues
+
+    each item in items
+        div.row
+            div.four.columns 
+                a(href="#", onClick='repoView("' + item.full_name + '")')
+                    = item.name
+            div.two.columns= item.owner.login
+            div.two.columns
+                if (item.private)
+                    |Private
+                else
+                    |Public
+            div.two.columns= item.forks
+            div.two.columns= item.open_issues
