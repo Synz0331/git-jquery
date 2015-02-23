@@ -15,8 +15,6 @@ function myEvents(){
             // assign the rendered html to the dom element whose id is #list
             $("#list").html(html)
 
-            // load the first repo to view
-            //repoView(events[0].full_name)
 
         })
 
